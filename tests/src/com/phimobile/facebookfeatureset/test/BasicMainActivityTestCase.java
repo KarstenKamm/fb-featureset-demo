@@ -12,10 +12,12 @@ public class BasicMainActivityTestCase extends
 
 	public BasicMainActivityTestCase() {
 		super(MainActivity.class);
+		Log.e("KK","BasicMainActivityTestCase launched");
 	}
 	
 	//launch activity; check existence and content of textview
 	public void testBasicMainActivityFunctionality() {
+		Log.e("KK","testBasicMainActivityFunctionality starts..");
 		Activity activity = getActivity();
 		
 		assertTrue(activity != null);
@@ -36,5 +38,7 @@ public class BasicMainActivityTestCase extends
 		assertTrue(v!=null);
 		assertTrue(v.getText().toString().equals(activity.getString(
 				com.phimobile.facebookfeatureset.R.string.hello_world)));
+		
+		Log.e("KK","testBasicMainActivityFunctionality done..");
 	}
 }
