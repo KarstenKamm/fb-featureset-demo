@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <com.facebook.widget.LoginButton 
+        android:id="@+id/login_fbloginbutton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"/>
+    
+    <LinearLayout 
+        android:id="@+id/login_loggedincontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <Button 
+            android:id="@+id/login_ownrequestbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="own request"/>
+        
+        <TextView android:id="@+id/login_name" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="default name" />
+        
+		<TextView android:id="@+id/login_gender" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="default_gender" />
+		
+		<TextView android:id="@+id/login_location" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="default_location" />
+    </LinearLayout>
+</LinearLayout>

@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Facebook-Featureset-Demo</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">FB Featureset Demo</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="teststraing">TEST!</string>
+    
+    <string name="facebook_app_id">$APP_ID</string>
 
 </resources>

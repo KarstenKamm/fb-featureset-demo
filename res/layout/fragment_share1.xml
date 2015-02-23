@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <Button 
+        android:id="@+id/share1_sharetext_sharedialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share via Share Dialog" />
+    <Button 
+        android:id="@+id/share1_sharetext_feeddialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share via Feed Dialog" />
+    <Button 
+        android:id="@+id/share1_sharetext_apicall_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share via API call" />
+	<Button 
+        android:id="@+id/share1_sharephoto_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share photos" />    
+	<Button 
+        android:id="@+id/share1_sharestory_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Story" />               
+</LinearLayout>

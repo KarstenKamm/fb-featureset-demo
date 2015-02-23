@@ -3,15 +3,16 @@ package com.phimobile.facebookfeatureset.test;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
-import com.phimobile.facebookfeatureset.MainActivity;
+import com.phimobile.facebookfeatureset.FBFeatureSetMainActivity;
 
 public class BasicMainActivityTestCase extends
-		ActivityInstrumentationTestCase2<MainActivity> {
+		ActivityInstrumentationTestCase2<FBFeatureSetMainActivity> {
 
 	public BasicMainActivityTestCase() {
-		super(MainActivity.class);
+		super(FBFeatureSetMainActivity.class);
 		Log.e("KK","BasicMainActivityTestCase launched");
 	}
 	
@@ -21,7 +22,7 @@ public class BasicMainActivityTestCase extends
 		Activity activity = getActivity();
 		
 		assertTrue(activity != null);
-		assertTrue(activity instanceof MainActivity);
+		assertTrue(activity instanceof FBFeatureSetMainActivity);
 		
 		activity.runOnUiThread(new Runnable() {
 			@Override
@@ -32,12 +33,10 @@ public class BasicMainActivityTestCase extends
 		
 		Log.e("KK","runnable started");
 		
-		TextView v = (TextView) activity.findViewById(
-				com.phimobile.facebookfeatureset.R.id.main_helloworld);
+		View v = activity.findViewById(
+				com.phimobile.facebookfeatureset.R.id.fragment_container);
 		
 		assertTrue(v!=null);
-		assertTrue(v.getText().toString().equals(activity.getString(
-				com.phimobile.facebookfeatureset.R.string.hello_world)));
 		
 		Log.e("KK","testBasicMainActivityFunctionality done..");
 	}
