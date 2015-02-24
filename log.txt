@@ -1,44 +1,14 @@
-Apache Ant(TM) version 1.9.3 compiled on December 23 2013
-Trying the default build file: build.xml
 Buildfile: C:\develop\android_2015\Facebook-Featureset-Demo\build.xml
-Detected Java version: 1.7 in: C:\Program Files\Java\jdk1.7.0_13\jre
-Detected OS: Windows 7
-parsing buildfile C:\develop\android_2015\Facebook-Featureset-Demo\build.xml with URI = file:/C:/develop/android_2015/Facebook-Featureset-Demo/build.xml
-Project base dir set to: C:\develop\android_2015\Facebook-Featureset-Demo
-parsing buildfile jar:file:/C:/develop/Programme/apache-ant-1.9.3/lib/ant.jar!/org/apache/tools/ant/antlib.xml with URI = jar:file:/C:/develop/Programme/apache-ant-1.9.3/lib/ant.jar!/org/apache/tools/ant/antlib.xml from a zip file
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\local.properties
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\ant.properties
- [property] Unable to find property file: C:\develop\android_2015\Facebook-Featureset-Demo\ant.properties
- [property] Loading Environment env.
-Override ignored for property "sdk.dir"
-Importing file C:\develop\android_2015\Facebook-Featureset-Demo\custom_rules.xml from C:\develop\android_2015\Facebook-Featureset-Demo\build.xml
-Cannot find C:\develop\android_2015\Facebook-Featureset-Demo\custom_rules.xml imported from C:\develop\android_2015\Facebook-Featureset-Demo\build.xml
-Importing file C:\develop\android_2015\Facebook-Featureset-Demo\build_ignorewarnings.xml from C:\develop\android_2015\Facebook-Featureset-Demo\build.xml
-Overriding previous definition of reference to ant.projectHelper
-parsing buildfile C:\develop\android_2015\Facebook-Featureset-Demo\build_ignorewarnings.xml with URI = file:/C:/develop/android_2015/Facebook-Featureset-Demo/build_ignorewarnings.xml
-Property "key.store" has not been set
- [macrodef] creating macro  do-only-if-not-library
- [macrodef] creating macro  do-only-if-manifest-hasCode
- [macrodef] creating macro  dex-helper
- [macrodef] creating macro  package-helper
- [macrodef] creating macro  zipalign-helper
- [macrodef] creating macro  run-tests-helper
- [macrodef] creating macro  record-build-key
- [macrodef] creating macro  record-build-info
- [macrodef] creating macro  uninstall-helper
-Overriding previous definition of reference to ant.projectHelper
-Build sequence for target(s) `release' is [-set-mode-check, -set-release-mode, -release-obfuscation-check, -pre-build, -check-env, -setup, -build-setup, -code-gen, -pre-compile, -compile, -post-compile, -obfuscate, -dex, -crunch, -package-resources, -package, -post-package, -release-prompt-for-password, -release-nosign, -release-sign, -post-build, release]
-Complete build sequence is [-set-mode-check, -set-release-mode, -release-obfuscation-check, -pre-build, -check-env, -setup, -build-setup, -code-gen, -pre-compile, -compile, -post-compile, -obfuscate, -dex, -crunch, -package-resources, -package, -post-package, -release-prompt-for-password, -release-nosign, -release-sign, -post-build, release, -set-instrumented-mode, -set-debug-mode, -debug-obfuscation-check, -do-debug, instrument, emma, android_rules.-pre-build, android_rules.-release-obfuscation-check, android_rules.-setup, lint, android_rules.-release-sign, -test-project-check, android_rules.nodeps, android_rules.-set-debug-files, android_rules.-set-debug-mode, -set-debug-files, debug, -pre-clean, install, installd, android_rules.installt, android_rules.-dex, android_rules.installr, android_rules.emma, android_rules.-release-nosign, android_rules.-pre-compile, android_rules.instrument, android_rules.uninstall, android_rules.installi, android_rules.lint, android_rules.-obfuscate, android_rules.clean, android_rules.installd, android_rules.-post-build, android_rules.-debug-obfuscation-check, android_rules.-compile, installt, help, android_rules.release, installr, android_rules.-pre-clean, android_rules.-post-compile, installi, android_rules.-code-gen, android_rules.-release-prompt-for-password, android_rules.-package-resources, android_rules.-set-mode-check, android_rules.-test-project-check, test, android_rules.help, android_rules.install, clean, android_rules.-do-debug, android_rules.-check-env, android_rules.-package, android_rules.-set-instrumented-mode, android_rules.-post-package, android_rules.test, android_rules.debug, uninstall, android_rules.-build-setup, nodeps, android_rules.-crunch, , android_rules.-set-release-mode]
-
--set-mode-check:
-
--set-release-mode:
-
--release-obfuscation-check:
-Property "proguard.config" has not been set
-     [echo] proguard.config is ${proguard.config}
-
--pre-build:
+     [echo] checkout facebook lib
+     [echo] delete old libs file/directory and ant.properties
+   [delete] Deleting: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs
+   [delete] Deleting: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\ant.properties
+     [echo] copying libs
+     [copy] Copying 3 files to C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs
+     [echo] copying ant.properties
+     [copy] Copying 1 file to C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook
+   [delete] Deleting: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\android-support-v4.jar
+     [copy] Copying 1 file to C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs
 
 -check-env:
  [checkenv] Android SDK Tools Revision 24.0.2
@@ -48,100 +18,18 @@ Property "proguard.config" has not been set
      [echo] Project Name: MainActivity
   [gettype] Project Type: Application
 
--build-setup:
-[getbuildtools] Using latest Build Tools: 21.1.2
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
- [property] Unable to find property file: C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
-     [echo] Resolving Build Target for MainActivity...
-[gettarget] Project Target:   Android 4.4.2
-[gettarget] API level:        19
-     [echo] ----------
-     [echo] Creating output directories if needed...
-    [mkdir] Skipping C:\develop\android_2015\Facebook-Featureset-Demo\res because it already exists.
-    [mkdir] Skipping C:\develop\android_2015\Facebook-Featureset-Demo\libs because it already exists.
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\res
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\rsObj
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\rsLibs
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\gen
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\classes
-    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\dexedLibs
-     [echo] ----------
-     [echo] Resolving Dependencies for MainActivity...
-[dependency] Library dependencies:
-[dependency] 
-[dependency] ------------------
-[dependency] Ordered libraries:
-[dependency] 
-[dependency] ------------------
-     [echo] ----------
-     [echo] Building Libraries with 'release'...
-Detected Java version: 1.7 in: C:\Program Files\Java\jdk1.7.0_13\jre
-Detected OS: Windows 7
-   [subant] calling target(s) [nodeps, release] in build file C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml
-parsing buildfile C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml with URI = file:/C:/develop/android_2015/Facebook-Featureset-Demo/libs/facebook-sdk/facebook/build.xml
-Project base dir set to: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\local.properties
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\ant.properties
-Importing file C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\custom_rules.xml from C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml
-Cannot find C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\custom_rules.xml imported from C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml
-Importing file c:\develop\android-sdk-windows\tools\ant\build.xml from C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml
-Overriding previous definition of reference to ant.projectHelper
-parsing buildfile c:\develop\android-sdk-windows\tools\ant\build.xml with URI = file:/c:/develop/android-sdk-windows/tools/ant/build.xml
-Duplicated project name in import. Project android_rules defined first in C:\develop\android_2015\Facebook-Featureset-Demo\build_ignorewarnings.xml and again in c:\develop\android-sdk-windows\tools\ant\build.xml
-Override ignored for property "java.compilerargs"
-Trying to override old definition of task testedprojectclasspath
-Trying to override old definition of task getuitarget
-Trying to override old definition of task getlibpath
-Trying to override old definition of task renderscript
-Trying to override old definition of task lint
-Trying to override old definition of task dex
-Trying to override old definition of task getprojectpaths
-Trying to override old definition of task buildconfig
-Trying to override old definition of task aidl
-Trying to override old definition of task propertybyreplace
-Trying to override old definition of task signapk
-Trying to override old definition of task gettype
-Trying to override old definition of task if
-Trying to override old definition of task dependency
-Trying to override old definition of task xpath
-Trying to override old definition of task zipalign
-Trying to override old definition of task apkbuilder
-Trying to override old definition of task getbuildtools
-Trying to override old definition of task aapt
-Trying to override old definition of task getemmafilter
-Trying to override old definition of task checkenv
-Trying to override old definition of task mergemanifest
-Trying to override old definition of task gettarget
-Trying to override old definition of task emmajava
-Trying to override old definition of task emma
-Override ignored for property "jar.libs.dir"
-Property "key.store" has not been set
- [macrodef] creating macro  do-only-if-not-library
- [macrodef] creating macro  do-only-if-manifest-hasCode
- [macrodef] creating macro  dex-helper
- [macrodef] creating macro  package-helper
- [macrodef] creating macro  zipalign-helper
- [macrodef] creating macro  run-tests-helper
- [macrodef] creating macro  record-build-key
- [macrodef] creating macro  record-build-info
- [macrodef] creating macro  uninstall-helper
-Overriding previous definition of reference to ant.projectHelper
-   [subant] Entering C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml...
-Build sequence for target(s) `nodeps', `release' is [nodeps, -set-mode-check, -set-release-mode, -release-obfuscation-check, -pre-build, -check-env, -setup, -build-setup, -code-gen, -pre-compile, -compile, -post-compile, -obfuscate, -dex, -crunch, -package-resources, -package, -post-package, -release-prompt-for-password, -release-nosign, -release-sign, -post-build, release]
-Complete build sequence is [nodeps, -set-mode-check, -set-release-mode, -release-obfuscation-check, -pre-build, -check-env, -setup, -build-setup, -code-gen, -pre-compile, -compile, -post-compile, -obfuscate, -dex, -crunch, -package-resources, -package, -post-package, -release-prompt-for-password, -release-nosign, -release-sign, -post-build, release, -set-instrumented-mode, -set-debug-mode, -debug-obfuscation-check, -do-debug, instrument, emma, android_rules.-pre-build, android_rules.-release-obfuscation-check, android_rules.-setup, lint, android_rules.-release-sign, -test-project-check, android_rules.nodeps, android_rules.-set-debug-files, android_rules.-set-debug-mode, -set-debug-files, debug, -pre-clean, install, installd, android_rules.installt, android_rules.-dex, android_rules.installr, android_rules.emma, android_rules.-release-nosign, android_rules.-pre-compile, android_rules.instrument, android_rules.uninstall, android_rules.installi, android_rules.lint, android_rules.-obfuscate, android_rules.clean, android_rules.installd, android_rules.-post-build, android_rules.-debug-obfuscation-check, android_rules.-compile, installt, help, android_rules.release, installr, android_rules.-pre-clean, android_rules.-post-compile, installi, android_rules.-code-gen, android_rules.-release-prompt-for-password, android_rules.-package-resources, android_rules.-set-mode-check, android_rules.-test-project-check, test, android_rules.help, android_rules.install, clean, android_rules.-do-debug, android_rules.-check-env, android_rules.-package, android_rules.-set-instrumented-mode, android_rules.-post-package, android_rules.test, android_rules.debug, uninstall, android_rules.-build-setup, android_rules.-crunch, , android_rules.-set-release-mode]
+-pre-clean:
+
+clean:
+   [delete] Deleting directory C:\develop\android_2015\Facebook-Featureset-Demo\bin
+   [delete] Deleting directory C:\develop\android_2015\Facebook-Featureset-Demo\gen
+[getlibpath] Library dependencies:
+[getlibpath] 
+[getlibpath] ------------------
+[getlibpath] Ordered libraries:
+Duplicated project name in import. Project android_rules defined first in C:\develop\android_2015\Facebook-Featureset-Demo\assets\build.xml and again in c:\develop\android-sdk-windows\tools\ant\build.xml
 
 nodeps:
-
--set-mode-check:
-
--set-release-mode:
-
--release-obfuscation-check:
-Property "proguard.config" has not been set
-     [echo] proguard.config is ${proguard.config}
-
--pre-build:
 
 -check-env:
  [checkenv] Android SDK Tools Revision 24.0.2
@@ -151,17 +39,81 @@ Property "proguard.config" has not been set
      [echo] Project Name: facebook
   [gettype] Project Type: Android Library
 
+-pre-clean:
+
+clean:
+   [delete] Deleting directory C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin
+   [delete] Deleting directory C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 24.0.2
+ [checkenv] Installed at c:\develop\android-sdk-windows
+
+-setup:
+     [echo] Project Name: MainActivity
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
 -build-setup:
 [getbuildtools] Using latest Build Tools: 21.1.2
- [property] Loading C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
- [property] Unable to find property file: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
-     [echo] Resolving Build Target for facebook...
+     [echo] Resolving Build Target for MainActivity...
 [gettarget] Project Target:   Android 4.4.2
 [gettarget] API level:        19
      [echo] ----------
      [echo] Creating output directories if needed...
-    [mkdir] Skipping C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res because it already exists.
-    [mkdir] Skipping C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\lib because it already exists.
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\res
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\rsObj
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\rsLibs
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\gen
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\classes
+    [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\dexedLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for MainActivity...
+[dependency] Ordered libraries:
+[dependency] C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+Duplicated project name in import. Project android_rules defined first in C:\develop\android_2015\Facebook-Featureset-Demo\assets\build.xml and again in c:\develop\android-sdk-windows\tools\ant\build.xml
+
+nodeps:
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 24.0.2
+ [checkenv] Installed at c:\develop\android-sdk-windows
+
+-setup:
+     [echo] Project Name: facebook
+  [gettype] Project Type: Android Library
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 21.1.2
+     [echo] Resolving Build Target for facebook...
+[gettarget] Project Target:   Android 2.3.1
+[gettarget] API level:        9
+     [echo] ----------
+     [echo] Creating output directories if needed...
     [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin
     [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res
     [mkdir] Created dir: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\rsObj
@@ -175,6 +127,7 @@ Property "proguard.config" has not been set
 [dependency] No Libraries
 [dependency] 
 [dependency] ------------------
+[dependency] API<=15: Adding annotations.jar to the classpath.
 
 -code-gen:
 [mergemanifest] Merging AndroidManifest files into one.
@@ -186,32 +139,6 @@ Property "proguard.config" has not been set
      [echo] ----------
      [echo] Handling Resources...
      [aapt] Generating resource IDs...
-     [aapt] Current OS is Windows 7
-     [aapt] Executing 'c:\develop\android-sdk-windows\build-tools\21.1.2\aapt.exe' with arguments:
-     [aapt] 'package'
-     [aapt] '--non-constant-id'
-     [aapt] '-f'
-     [aapt] '-m'
-     [aapt] '-0'
-     [aapt] 'apk'
-     [aapt] '--output-text-symbols'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin'
-     [aapt] '-M'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\AndroidManifest.xml'
-     [aapt] '-S'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res'
-     [aapt] '-S'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res'
-     [aapt] '-I'
-     [aapt] 'c:\develop\android-sdk-windows\platforms\android-19\android.jar'
-     [aapt] '-J'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen'
-     [aapt] '--generate-dependencies'
-     [aapt] '-G'
-     [aapt] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\proguard.txt'
-     [aapt] 
-     [aapt] The ' characters around the executable and arguments are
-     [aapt] not part of the command.
      [echo] ----------
      [echo] Handling BuildConfig class...
 [buildconfig] Generating BuildConfig class.
@@ -219,249 +146,318 @@ Property "proguard.config" has not been set
 -pre-compile:
 
 -compile:
-    [javac] com\facebook\AccessToken.java added as com\facebook\AccessToken.class doesn't exist.
-    [javac] com\facebook\AccessTokenSource.java added as com\facebook\AccessTokenSource.class doesn't exist.
-    [javac] com\facebook\AppEventsConstants.java added as com\facebook\AppEventsConstants.class doesn't exist.
-    [javac] com\facebook\AppEventsLogger.java added as com\facebook\AppEventsLogger.class doesn't exist.
-    [javac] com\facebook\AppLinkData.java added as com\facebook\AppLinkData.class doesn't exist.
-    [javac] com\facebook\AuthorizationClient.java added as com\facebook\AuthorizationClient.class doesn't exist.
-    [javac] com\facebook\BoltsMeasurementEventListener.java added as com\facebook\BoltsMeasurementEventListener.class doesn't exist.
-    [javac] com\facebook\FacebookAppLinkResolver.java added as com\facebook\FacebookAppLinkResolver.class doesn't exist.
-    [javac] com\facebook\FacebookAuthorizationException.java added as com\facebook\FacebookAuthorizationException.class doesn't exist.
-    [javac] com\facebook\FacebookBroadcastReceiver.java added as com\facebook\FacebookBroadcastReceiver.class doesn't exist.
-    [javac] com\facebook\FacebookDialogException.java added as com\facebook\FacebookDialogException.class doesn't exist.
-    [javac] com\facebook\FacebookException.java added as com\facebook\FacebookException.class doesn't exist.
-    [javac] com\facebook\FacebookGraphObjectException.java added as com\facebook\FacebookGraphObjectException.class doesn't exist.
-    [javac] com\facebook\FacebookOperationCanceledException.java added as com\facebook\FacebookOperationCanceledException.class doesn't exist.
-    [javac] com\facebook\FacebookRequestError.java added as com\facebook\FacebookRequestError.class doesn't exist.
-    [javac] com\facebook\FacebookSdkVersion.java added as com\facebook\FacebookSdkVersion.class doesn't exist.
-    [javac] com\facebook\FacebookServiceException.java added as com\facebook\FacebookServiceException.class doesn't exist.
-    [javac] com\facebook\FacebookTimeSpentData.java added as com\facebook\FacebookTimeSpentData.class doesn't exist.
-    [javac] com\facebook\GetTokenClient.java added as com\facebook\GetTokenClient.class doesn't exist.
-    [javac] com\facebook\HttpMethod.java added as com\facebook\HttpMethod.class doesn't exist.
-    [javac] com\facebook\InsightsLogger.java added as com\facebook\InsightsLogger.class doesn't exist.
-    [javac] com\facebook\LegacyHelper.java added as com\facebook\LegacyHelper.class doesn't exist.
-    [javac] com\facebook\LoggingBehavior.java added as com\facebook\LoggingBehavior.class doesn't exist.
-    [javac] com\facebook\LoginActivity.java added as com\facebook\LoginActivity.class doesn't exist.
-    [javac] com\facebook\NativeAppCallAttachmentStore.java added as com\facebook\NativeAppCallAttachmentStore.class doesn't exist.
-    [javac] com\facebook\NativeAppCallContentProvider.java added as com\facebook\NativeAppCallContentProvider.class doesn't exist.
-    [javac] com\facebook\NonCachingTokenCachingStrategy.java added as com\facebook\NonCachingTokenCachingStrategy.class doesn't exist.
-    [javac] com\facebook\ProgressNoopOutputStream.java added as com\facebook\ProgressNoopOutputStream.class doesn't exist.
-    [javac] com\facebook\ProgressOutputStream.java added as com\facebook\ProgressOutputStream.class doesn't exist.
-    [javac] com\facebook\Request.java added as com\facebook\Request.class doesn't exist.
-    [javac] com\facebook\RequestAsyncTask.java added as com\facebook\RequestAsyncTask.class doesn't exist.
-    [javac] com\facebook\RequestBatch.java added as com\facebook\RequestBatch.class doesn't exist.
-    [javac] com\facebook\RequestOutputStream.java added as com\facebook\RequestOutputStream.class doesn't exist.
-    [javac] com\facebook\RequestProgress.java added as com\facebook\RequestProgress.class doesn't exist.
-    [javac] com\facebook\Response.java added as com\facebook\Response.class doesn't exist.
-    [javac] com\facebook\Session.java added as com\facebook\Session.class doesn't exist.
-    [javac] com\facebook\SessionDefaultAudience.java added as com\facebook\SessionDefaultAudience.class doesn't exist.
-    [javac] com\facebook\SessionLoginBehavior.java added as com\facebook\SessionLoginBehavior.class doesn't exist.
-    [javac] com\facebook\SessionState.java added as com\facebook\SessionState.class doesn't exist.
-    [javac] com\facebook\Settings.java added as com\facebook\Settings.class doesn't exist.
-    [javac] com\facebook\SharedPreferencesTokenCachingStrategy.java added as com\facebook\SharedPreferencesTokenCachingStrategy.class doesn't exist.
-    [javac] com\facebook\TestSession.java added as com\facebook\TestSession.class doesn't exist.
-    [javac] com\facebook\TokenCachingStrategy.java added as com\facebook\TokenCachingStrategy.class doesn't exist.
-    [javac] com\facebook\UiLifecycleHelper.java added as com\facebook\UiLifecycleHelper.class doesn't exist.
-    [javac] com\facebook\android\AsyncFacebookRunner.java added as com\facebook\android\AsyncFacebookRunner.class doesn't exist.
-    [javac] com\facebook\android\DialogError.java added as com\facebook\android\DialogError.class doesn't exist.
-    [javac] com\facebook\android\Facebook.java added as com\facebook\android\Facebook.class doesn't exist.
-    [javac] com\facebook\android\FacebookError.java added as com\facebook\android\FacebookError.class doesn't exist.
-    [javac] com\facebook\android\FbDialog.java added as com\facebook\android\FbDialog.class doesn't exist.
-    [javac] com\facebook\android\Util.java added as com\facebook\android\Util.class doesn't exist.
-    [javac] com\facebook\internal\AnalyticsEvents.java added as com\facebook\internal\AnalyticsEvents.class doesn't exist.
-    [javac] com\facebook\internal\AttributionIdentifiers.java added as com\facebook\internal\AttributionIdentifiers.class doesn't exist.
-    [javac] com\facebook\internal\BundleJSONConverter.java added as com\facebook\internal\BundleJSONConverter.class doesn't exist.
-    [javac] com\facebook\internal\CacheableRequestBatch.java added as com\facebook\internal\CacheableRequestBatch.class doesn't exist.
-    [javac] com\facebook\internal\FacebookWebFallbackDialog.java added as com\facebook\internal\FacebookWebFallbackDialog.class doesn't exist.
-    [javac] com\facebook\internal\FileLruCache.java added as com\facebook\internal\FileLruCache.class doesn't exist.
-    [javac] com\facebook\internal\ImageDownloader.java added as com\facebook\internal\ImageDownloader.class doesn't exist.
-    [javac] com\facebook\internal\ImageRequest.java added as com\facebook\internal\ImageRequest.class doesn't exist.
-    [javac] com\facebook\internal\ImageResponse.java added as com\facebook\internal\ImageResponse.class doesn't exist.
-    [javac] com\facebook\internal\ImageResponseCache.java added as com\facebook\internal\ImageResponseCache.class doesn't exist.
-    [javac] com\facebook\internal\LikeActionController.java added as com\facebook\internal\LikeActionController.class doesn't exist.
-    [javac] com\facebook\internal\LikeBoxCountView.java added as com\facebook\internal\LikeBoxCountView.class doesn't exist.
-    [javac] com\facebook\internal\LikeButton.java added as com\facebook\internal\LikeButton.class doesn't exist.
-    [javac] com\facebook\internal\LikeStatusClient.java added as com\facebook\internal\LikeStatusClient.class doesn't exist.
-    [javac] com\facebook\internal\Logger.java added as com\facebook\internal\Logger.class doesn't exist.
-    [javac] com\facebook\internal\NativeProtocol.java added as com\facebook\internal\NativeProtocol.class doesn't exist.
-    [javac] com\facebook\internal\PendingCallStore.java added as com\facebook\internal\PendingCallStore.class doesn't exist.
-    [javac] com\facebook\internal\PlatformServiceClient.java added as com\facebook\internal\PlatformServiceClient.class doesn't exist.
-    [javac] com\facebook\internal\ServerProtocol.java added as com\facebook\internal\ServerProtocol.class doesn't exist.
-    [javac] com\facebook\internal\SessionAuthorizationType.java added as com\facebook\internal\SessionAuthorizationType.class doesn't exist.
-    [javac] com\facebook\internal\SessionTracker.java added as com\facebook\internal\SessionTracker.class doesn't exist.
-    [javac] com\facebook\internal\UrlRedirectCache.java added as com\facebook\internal\UrlRedirectCache.class doesn't exist.
-    [javac] com\facebook\internal\Utility.java added as com\facebook\internal\Utility.class doesn't exist.
-    [javac] com\facebook\internal\Validate.java added as com\facebook\internal\Validate.class doesn't exist.
-    [javac] com\facebook\internal\WorkQueue.java added as com\facebook\internal\WorkQueue.class doesn't exist.
-    [javac] com\facebook\internal\package-info.java added as com\facebook\internal\package-info.class doesn't exist.
-    [javac] com\facebook\model\CreateGraphObject.java added as com\facebook\model\CreateGraphObject.class doesn't exist.
-    [javac] com\facebook\model\GraphLocation.java added as com\facebook\model\GraphLocation.class doesn't exist.
-    [javac] com\facebook\model\GraphMultiResult.java added as com\facebook\model\GraphMultiResult.class doesn't exist.
-    [javac] com\facebook\model\GraphObject.java added as com\facebook\model\GraphObject.class doesn't exist.
-    [javac] com\facebook\model\GraphObjectList.java added as com\facebook\model\GraphObjectList.class doesn't exist.
-    [javac] com\facebook\model\GraphPlace.java added as com\facebook\model\GraphPlace.class doesn't exist.
-    [javac] com\facebook\model\GraphUser.java added as com\facebook\model\GraphUser.class doesn't exist.
-    [javac] com\facebook\model\JsonUtil.java added as com\facebook\model\JsonUtil.class doesn't exist.
-    [javac] com\facebook\model\OpenGraphAction.java added as com\facebook\model\OpenGraphAction.class doesn't exist.
-    [javac] com\facebook\model\OpenGraphObject.java added as com\facebook\model\OpenGraphObject.class doesn't exist.
-    [javac] com\facebook\model\PropertyName.java added as com\facebook\model\PropertyName.class doesn't exist.
-    [javac] com\facebook\widget\FacebookDialog.java added as com\facebook\widget\FacebookDialog.class doesn't exist.
-    [javac] com\facebook\widget\FacebookFragment.java added as com\facebook\widget\FacebookFragment.class doesn't exist.
-    [javac] com\facebook\widget\FriendPickerFragment.java added as com\facebook\widget\FriendPickerFragment.class doesn't exist.
-    [javac] com\facebook\widget\GraphObjectAdapter.java added as com\facebook\widget\GraphObjectAdapter.class doesn't exist.
-    [javac] com\facebook\widget\GraphObjectCursor.java added as com\facebook\widget\GraphObjectCursor.class doesn't exist.
-    [javac] com\facebook\widget\GraphObjectPagingLoader.java added as com\facebook\widget\GraphObjectPagingLoader.class doesn't exist.
-    [javac] com\facebook\widget\LikeView.java added as com\facebook\widget\LikeView.class doesn't exist.
-    [javac] com\facebook\widget\LoginButton.java added as com\facebook\widget\LoginButton.class doesn't exist.
-    [javac] com\facebook\widget\PickerFragment.java added as com\facebook\widget\PickerFragment.class doesn't exist.
-    [javac] com\facebook\widget\PlacePickerFragment.java added as com\facebook\widget\PlacePickerFragment.class doesn't exist.
-    [javac] com\facebook\widget\ProfilePictureView.java added as com\facebook\widget\ProfilePictureView.class doesn't exist.
-    [javac] com\facebook\widget\SimpleGraphObjectCursor.java added as com\facebook\widget\SimpleGraphObjectCursor.class doesn't exist.
-    [javac] com\facebook\widget\ToolTipPopup.java added as com\facebook\widget\ToolTipPopup.class doesn't exist.
-    [javac] com\facebook\widget\UserSettingsFragment.java added as com\facebook\widget\UserSettingsFragment.class doesn't exist.
-    [javac] com\facebook\widget\WebDialog.java added as com\facebook\widget\WebDialog.class doesn't exist.
-    [javac] C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen\R.java.d skipped - don't know how to handle it
-    [javac] com\facebook\android\BuildConfig.java added as com\facebook\android\BuildConfig.class doesn't exist.
-    [javac] com\facebook\android\R.java added as com\facebook\android\R.class doesn't exist.
     [javac] Compiling 104 source files to C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes
-    [javac] Using modern compiler
-    [javac] Compilation arguments:
-    [javac] '-d'
-    [javac] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes'
-    [javac] '-classpath'
-    [javac] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes;C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\bolts-android-1.1.2.jar;C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\android-support-v4.jar'
-    [javac] '-sourcepath'
-    [javac] 'C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src;C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen'
-    [javac] '-target'
-    [javac] '1.5'
-    [javac] '-bootclasspath'
-    [javac] 'c:\develop\android-sdk-windows\platforms\android-19\android.jar'
-    [javac] '-encoding'
-    [javac] 'UTF-8'
-    [javac] '-g'
-    [javac] '-Xlint'
-    [javac] '-Werror'
-    [javac] '-source'
-    [javac] '1.5'
-    [javac] 
-    [javac] The ' characters around the executable and arguments are
-    [javac] not part of the command.
-    [javac] Files to be compiled:
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AccessToken.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AccessTokenSource.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AppEventsConstants.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AppEventsLogger.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AppLinkData.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\AuthorizationClient.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\BoltsMeasurementEventListener.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookAppLinkResolver.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookAuthorizationException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookBroadcastReceiver.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookDialogException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookGraphObjectException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookOperationCanceledException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookRequestError.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookSdkVersion.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookServiceException.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\FacebookTimeSpentData.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\GetTokenClient.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\HttpMethod.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\InsightsLogger.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\LegacyHelper.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\LoggingBehavior.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\LoginActivity.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\NativeAppCallAttachmentStore.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\NativeAppCallContentProvider.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\NonCachingTokenCachingStrategy.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\ProgressNoopOutputStream.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\ProgressOutputStream.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\Request.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\RequestAsyncTask.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\RequestBatch.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\RequestOutputStream.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\RequestProgress.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\Response.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\Session.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\SessionDefaultAudience.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\SessionLoginBehavior.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\SessionState.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\Settings.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\SharedPreferencesTokenCachingStrategy.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\TestSession.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\TokenCachingStrategy.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\UiLifecycleHelper.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\AsyncFacebookRunner.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\DialogError.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\Facebook.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\FacebookError.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\FbDialog.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\android\Util.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\AnalyticsEvents.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\AttributionIdentifiers.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\BundleJSONConverter.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\CacheableRequestBatch.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\FacebookWebFallbackDialog.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\FileLruCache.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\ImageDownloader.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\ImageRequest.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\ImageResponse.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\ImageResponseCache.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\LikeActionController.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\LikeBoxCountView.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\LikeButton.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\LikeStatusClient.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\Logger.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\NativeProtocol.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\PendingCallStore.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\PlatformServiceClient.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\ServerProtocol.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\SessionAuthorizationType.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\SessionTracker.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\UrlRedirectCache.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\Utility.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\Validate.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\WorkQueue.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\internal\package-info.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\CreateGraphObject.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphLocation.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphMultiResult.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphObject.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphObjectList.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphPlace.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\GraphUser.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\JsonUtil.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\OpenGraphAction.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\OpenGraphObject.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\model\PropertyName.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\FacebookDialog.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\FacebookFragment.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\FriendPickerFragment.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\GraphObjectAdapter.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\GraphObjectCursor.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\GraphObjectPagingLoader.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\LikeView.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\LoginButton.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\PickerFragment.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\PlacePickerFragment.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\ProfilePictureView.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\SimpleGraphObjectCursor.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\ToolTipPopup.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\UserSettingsFragment.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\WebDialog.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen\com\facebook\android\BuildConfig.java
-    [javac]     C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\gen\com\facebook\android\R.java
-    [javac] C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\WebDialog.java:391: warning: [deprecation] setSavePassword(boolean) in WebSettings has been deprecated
-    [javac]         webView.getSettings().setSavePassword(false);
-    [javac]                              ^
-    [javac] error: warnings found and -Werror specified
-    [javac] C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\PickerFragment.java:654: warning: [deprecation] setBackgroundDrawable(Drawable) in View has been deprecated
-    [javac]                 titleBar.setBackgroundDrawable(titleBarBackground);
-    [javac]                         ^
-    [javac] C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\src\com\facebook\widget\PickerFragment.java:676: warning: [deprecation] setBackgroundDrawable(Drawable) in View has been deprecated
-    [javac]                     doneButton.setBackgroundDrawable(doneButtonBackground);
-    [javac]                               ^
-    [javac] 1 error
-    [javac] 3 warnings
-   [subant] Exiting C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\build.xml.
+    [javac] Creating empty C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes\com\facebook\internal\package-info.class
+     [echo] Creating library output jar file...
+      [jar] Building jar: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes.jar
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+     [echo] Library project: do not convert bytecode...
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res
+   [crunch] To destination dir: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_blue_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_blue_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_blue_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_blue_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_grey_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_grey_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_grey_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_grey_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_like_background.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_background.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_background.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_like_background_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_background_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_background_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_like_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_like_icon_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_icon_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_icon_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_button_like_pressed.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_pressed.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_button_like_pressed.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_close.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_close.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_close.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_inverse_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_inverse_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_inverse_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_logo.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_logo.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_logo.png: 89% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_picker_magnifier.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_picker_magnifier.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_picker_magnifier.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_black_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_black_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_black_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_black_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_black_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_blue_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_blue_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_blue_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-hdpi\com_facebook_tooltip_blue_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-hdpi\com_facebook_tooltip_blue_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-ldpi\com_facebook_close.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-ldpi\com_facebook_close.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-ldpi\com_facebook_close.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_button_blue_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_button_blue_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_button_blue_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_button_blue_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_inverse_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_inverse_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_inverse_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_picker_magnifier.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_picker_magnifier.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_picker_magnifier.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_black_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_black_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_black_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_black_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_black_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_blue_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_blue_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_blue_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-mdpi\com_facebook_tooltip_blue_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-mdpi\com_facebook_tooltip_blue_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_blue_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_blue_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_blue_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_blue_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_grey_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_grey_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_grey_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_grey_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_like_background.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_background.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_background.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_like_background_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_background_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_background_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_like_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_like_icon_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_icon_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_icon_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_button_like_pressed.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_pressed.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_button_like_pressed.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_close.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_close.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_close.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_inverse_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_inverse_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_inverse_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_logo.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_logo.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_logo.png: 110% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_picker_magnifier.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_picker_magnifier.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_picker_magnifier.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_black_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_black_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_black_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_black_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_black_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_blue_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_blue_bottomnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_bottomnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_bottomnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_blue_topnub.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_topnub.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_topnub.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xhdpi\com_facebook_tooltip_blue_xout.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_xout.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xhdpi\com_facebook_tooltip_blue_xout.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xxhdpi\com_facebook_button_like_background.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_background.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_background.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xxhdpi\com_facebook_button_like_background_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_background_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_background_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xxhdpi\com_facebook_button_like_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xxhdpi\com_facebook_button_like_icon_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_icon_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_icon_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable-xxhdpi\com_facebook_button_like_pressed.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_pressed.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable-xxhdpi\com_facebook_button_like_pressed.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_blue_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_blue_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_blue_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_blue_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_check_off.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_check_off.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_check_off.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_check_on.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_check_on.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_check_on.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_grey_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_grey_normal.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_normal.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_normal.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_grey_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_grey_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_like_background.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_background.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_background.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_like_background_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_background_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_background_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_like_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_like_icon_selected.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_icon_selected.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_icon_selected.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_button_like_pressed.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_pressed.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_button_like_pressed.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_close.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_close.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_close.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_inverse_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_inverse_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_inverse_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_list_divider.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_list_divider.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_list_divider.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_list_section_header_background.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_list_section_header_background.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_list_section_header_background.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_logo.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_logo.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_logo.png: 71% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_picker_list_focused.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_focused.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_focused.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_picker_list_longpressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_longpressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_longpressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_picker_list_pressed.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_pressed.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_pressed.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_picker_list_selector_disabled.9.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_selector_disabled.9.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_picker_list_selector_disabled.9.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_place_default_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_place_default_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_place_default_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_profile_default_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_default_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_default_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_profile_picture_blank_portrait.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_picture_blank_portrait.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_picture_blank_portrait.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\res\drawable\com_facebook_profile_picture_blank_square.png => C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_picture_blank_square.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\res\drawable\com_facebook_profile_picture_blank_square.png: 0% size of source)
+   [crunch] Crunched 91 PNG files to update cache
+
+-package-resources:
+     [echo] Library project: do not package resources...
+
+-package:
+     [echo] Library project: do not package apk...
+
+-post-package:
+
+-do-debug:
+     [echo] Library project: do not create apk...
+[propertyfile] Creating new property file: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\build.prop
+
+-post-build:
+
+debug:
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 9 source files to C:\develop\android_2015\Facebook-Featureset-Demo\bin\classes
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+      [dex] input: C:\develop\android_2015\Facebook-Featureset-Demo\bin\classes
+      [dex] input: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes.jar
+      [dex] input: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\bolts-android-1.1.2.jar
+      [dex] input: C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\android-support-v4.jar
+      [dex] Pre-Dexing C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\bin\classes.jar -> classes-d7e148edd5cd78e97431a057f3c4eea2.jar
+      [dex] Pre-Dexing C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\bolts-android-1.1.2.jar -> bolts-android-1.1.2-ccb5e81787a587411199b7d159245930.jar
+      [dex] Pre-Dexing C:\develop\android_2015\Facebook-Featureset-Demo\libs\facebook-sdk\facebook\libs\android-support-v4.jar -> android-support-v4-81076460062865b5b940268baa9737d5.jar
+      [dex] Converting compiled files and external libraries into C:\develop\android_2015\Facebook-Featureset-Demo\bin\classes.dex...
+       [dx] Merged dex A (40 defs/40,4KiB) with dex B (413 defs/529,0KiB). Result is 453 defs/690,7KiB. Took 0,2s
+       [dx] Merged dex A (453 defs/690,7KiB) with dex B (37 defs/45,3KiB). Result is 490 defs/945,0KiB. Took 0,1s
+       [dx] Merged dex A (490 defs/945,0KiB) with dex B (809 defs/815,4KiB). Result is 1299 defs/2318,4KiB. Took 0,1s
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: C:\develop\android_2015\Facebook-Featureset-Demo\res
+   [crunch] To destination dir: C:\develop\android_2015\Facebook-Featureset-Demo\bin\res
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\res\drawable-hdpi\client_launcher_icon.png => C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-hdpi\client_launcher_icon.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-hdpi\client_launcher_icon.png: 0% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\res\drawable-hdpi\ic_launcher.png => C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-hdpi\ic_launcher.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-hdpi\ic_launcher.png: 87% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\res\drawable-mdpi\ic_launcher.png => C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-mdpi\ic_launcher.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-mdpi\ic_launcher.png: 78% size of source)
+   [crunch] Processing image to cache: C:\develop\android_2015\Facebook-Featureset-Demo\res\drawable-xhdpi\ic_launcher.png => C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-xhdpi\ic_launcher.png
+   [crunch]   (processed image to cache entry C:\develop\android_2015\Facebook-Featureset-Demo\bin\res\drawable-xhdpi\ic_launcher.png: 85% size of source)
+   [crunch] Crunched 4 PNG files to update cache
+   [crunch] C:\develop\android_2015\Facebook-Featureset-Demo\res\drawable-hdpi\client_launcher_icon.png: libpng warning: iCCP: Not recognizing known sRGB profile that has been edited
+
+-package-resources:
+     [aapt] Creating full resource package...
+
+-package:
+[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
+[apkbuilder] Creating MainActivity-debug-unaligned.apk and signing it with a debug key...
+
+-post-package:
+
+-do-debug:
+ [zipalign] Running zip align on final apk...
+     [echo] Debug Package: C:\develop\android_2015\Facebook-Featureset-Demo\bin\MainActivity-debug.apk
+[propertyfile] Creating new property file: C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
+[propertyfile] Updating property file: C:\develop\android_2015\Facebook-Featureset-Demo\bin\build.prop
+
+-post-build:
+
+debug:
+
+install:
+     [echo] Installing C:\develop\android_2015\Facebook-Featureset-Demo\bin\MainActivity-debug.apk onto default emulator or device...
+     [exec] adb server is out of date.  killing...
+     [exec] * daemon started successfully *
+     [exec] adb server is out of date.  killing...
+     [exec] * daemon started successfully *
+     [exec] 	pkg: /data/local/tmp/MainActivity-debug.apk
+     [exec] Success
+     [exec] adb server is out of date.  killing...
+     [exec] * daemon started successfully *
+     [exec] adb server is out of date.  killing...
+     [exec] * daemon started successfully *
+     [exec] adb server is out of date.  killing...
+     [exec] * daemon started successfully *
+     [exec] 3419 KB/s (816027 bytes in 0.233s)
+     [exec] - waiting for device -
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 24.0.2
+ [checkenv] Installed at c:\develop\android-sdk-windows
+
+-setup:
+     [echo] Project Name: MainActivity
+  [gettype] Project Type: Application
+
+-test-project-check:
