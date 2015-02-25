@@ -12,7 +12,7 @@ android:
 before_script:
   - chmod a+x ./assets/run-build.sh
   - android update project -p .
-  - android update lib-project libs/facebook-android-sdk/facebook
+  - android update lib-project --path libs/facebook-android-sdk/facebook
   - android update test-project -m .. -p ./tests
   - cat tests/ant.properties
   - cat tests/local.properties
