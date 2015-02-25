@@ -139,5 +139,6 @@
     <!-- version-tag: 1 -->
    <!--  <import file="build_ignorewarnings.xml" /> --> 
    <!--   <import file="${sdk.dir}/tools/ant/build.xml" />  -->
-	<import file="assets/build.xml" />
+<!-- 	<import file="assets/build.xml" /> -->
+	<import file="${sdk.dir}/tools/ant/build.xml" />
 </project>
