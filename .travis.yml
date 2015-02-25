@@ -11,7 +11,7 @@ android:
 # Emulator Management: Create, Start and Wait
 before_script:
   - chmod a+x ./assets/run-build.sh
-  - android update test-project -m . -p ./tests
+  - android update test-project -m .. -p ./tests
   - cat tests/ant.properties
   - cat tests/local.properties
   - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
