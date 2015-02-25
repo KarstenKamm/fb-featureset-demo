@@ -67,40 +67,33 @@
             -pre-clean
     -->
     <import file="custom_rules.xml" optional="true" />
-    
-    <echo message="checkout facebook lib" />
-    
-    <!--  checkout fb commit -->
-<!--     <exec executable="git">
-        <arg value="checkout" />
-        <arg value="origin/master" />
-    </exec>  -->
-    
+ 
+
     <echo message="delete old libs file/directory and ant.properties" />
-    <delete file="libs/facebook-sdk/facebook/libs" />
-    <delete file="libs/facebook-sdk/facebook/ant.properties" />
+    <delete file="libs/facebook-android-sdk/facebook/libs" />
+    <delete file="libs/facebook-android-sdk/facebook/ant.properties" />
     
     
     <echo message="copying libs" />
     <!-- copy libs into sdk project because link to that directory doesnt work -->
-    <copy todir="libs/facebook-sdk/facebook/libs">
-    	<fileset dir="libs/facebook-sdk/libs"/>
+    <copy todir="libs/facebook-android-sdk/facebook/libs">
+    	<fileset dir="libs/facebook-android-sdk/libs"/>
   	</copy>
   	
   	
     <echo message="copying ant.properties" />
     <!-- replace ant.properties with version whithout -Werror flag -->
-    <copy file="assets/ant.properties" tofile="libs/facebook-sdk/facebook/ant.properties" />
+    <copy file="assets/ant.properties" tofile="libs/facebook-android-sdk/facebook/ant.properties" />
     
-    <delete file="libs/facebook-sdk/facebook/libs/android-support-v4.jar" />
-    <copy file="libs/android-support-v4.jar" tofile="libs/facebook-sdk/facebook/libs/android-support-v4.jar" />
+    <delete file="libs/facebook-android-sdk/facebook/libs/android-support-v4.jar" />
+    <copy file="libs/android-support-v4.jar" tofile="libs/facebook-android-sdk/facebook/libs/android-support-v4.jar" />
     
 	<!--  check if copying was successful -->    
     <fail message="support lib is missing.">
 	    <condition>
 	        <not>
 	            <resourcecount count="1">
-	                <fileset id="fs" dir="libs/facebook-sdk/facebook/libs/" includes="android-support-v4.jar"/>
+	                <fileset id="fs" dir="libs/facebook-android-sdk/facebook/libs/" includes="android-support-v4.jar"/>
 	            </resourcecount>
 	        </not>
 	    </condition>
@@ -109,7 +102,7 @@
 	    <condition>
 	        <not>
 	            <resourcecount count="1">
-	                <fileset id="fs" dir="libs/facebook-sdk/facebook/" includes="ant.properties"/>
+	                <fileset id="fs" dir="libs/facebook-android-sdk/facebook/" includes="ant.properties"/>
 	            </resourcecount>
 	        </not>
 	    </condition>
@@ -118,7 +111,7 @@
 	    <condition>
 	        <not>
 	            <resourcecount count="1">
-	                <fileset id="fs" dir="libs/facebook-sdk/facebook/libs/" includes="BUCK"/>
+	                <fileset id="fs" dir="libs/facebook-android-sdk/facebook/libs/" includes="BUCK"/>
 	            </resourcecount>
 	        </not>
 	    </condition>

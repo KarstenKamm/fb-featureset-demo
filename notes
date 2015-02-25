@@ -1,0 +1,7 @@
+<!--     <exec executable="${sdk.dir}/tools/android.bat">
+        <arg value="update lib-project" />
+        <arg value="--target android-9" />
+        <arg value="-path ." />
+        <arg value="--library ./libs/facebook-android-sdk/facebook" />
+    </exec>
+     -->
