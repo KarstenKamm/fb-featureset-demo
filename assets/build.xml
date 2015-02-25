@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="android_rules" default="debug">
-
+<!-- copied from {sdk.dir}/tools/ant/build.xml -->
+    
     <!--
         This build file is imported by the project build file. It contains
         all the targets and tasks necessary to build Android projects, be they
