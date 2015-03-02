@@ -3,3 +3,5 @@ bin/
 gen/
 local.properties
 tests/log.txt
+res/values/secret.local.strings.xml
+assets/secret.config.json

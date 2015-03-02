@@ -1,26 +1,24 @@
 language: android
 android:
-
   components:
-  
   - build-tools-21.1.2
   - android-19
   - sys-img-armeabi-v7a-android-19
-  
-  
-# Emulator Management: Create, Start and Wait
 before_script:
-  - chmod a+x ./assets/run-build.sh
-  - android update project -p .
-  - android update lib-project --path libs/facebook-android-sdk/facebook --target android-19
-  - android update test-project -m .. -p ./tests 
-  - cat tests/ant.properties
-  - cat tests/local.properties
-  - cat libs/facebook-android-sdk/facebook/local.properties
-  - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &  
-
-script: ./assets/run-build.sh
-
+- chmod a+x ./assets/run-build.sh
+- android update project -p .
+- android update lib-project --path libs/facebook-android-sdk/facebook --target android-19
+- android update test-project -m .. -p ./tests
+- cat tests/ant.properties
+- cat tests/local.properties
+- cat libs/facebook-android-sdk/facebook/local.properties
+- echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
+- emulator -avd test -no-skin -no-audio -no-window &
+- android-wait-for-emulator
+- adb shell input keyevent 82 &
+script: "./assets/run-build.sh"
+before_install:
+- openssl aes-256-cbc -K $encrypted_dd9727ebf51f_key -iv $encrypted_dd9727ebf51f_iv
+  -in secret.local.strings.xml.enc -out res\\values\\secret.local.strings.xml -d
+- openssl aes-256-cbc -K $encrypted_dd9727ebf51f_key -iv $encrypted_dd9727ebf51f_iv
+  -in secret.config.json.enc -out assets\\secret.config.json -d

@@ -68,8 +68,8 @@ public class FBFeatureSetMainActivity extends FragmentActivity {
             
         }
         
-        
-        
+        //TODO KK 3 show api level, fb sdk version
+        //TODO KK 0 try this: authButton.setLoginBehavior(SessionLoginBehavior.SUPPRESS_SSO);
         container = (FrameLayout) findViewById(R.id.fragment_container);
         
         switchToLoginFragment();
@@ -171,6 +171,15 @@ public class FBFeatureSetMainActivity extends FragmentActivity {
 		@Override
 		public void call(Session session, SessionState state,
 				Exception exception) {
+			if (FBFeatureSetMainActivity.this.state!=null) {
+				Log.w("KK", "fb state change: was " + 
+					FBFeatureSetMainActivity.this.state.name() + 
+					", is: " + state.name());
+			} else {
+				Log.w("KK", "fb state established: " + state.name());
+			}
+			
+			
 			FBFeatureSetMainActivity.this.state = state;   
 			
 			if (listener!=null) {

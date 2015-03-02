@@ -5,6 +5,8 @@ import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.view.View;
 
+import com.facebook.Session;
+import com.facebook.SessionState;
 import com.facebook.android.Facebook;
 import com.facebook.widget.LoginButton;
 import com.phimobile.facebookfeatureset.FBFeatureSetMainActivity;
@@ -49,11 +51,30 @@ public class FBLoginButtonTestCase extends
 				
 				assertTrue(frag!=null);
 				
-				LoginButton loginButton = (LoginButton) 
+				final LoginButton loginButton = (LoginButton) 
 						activity.findViewById(com.phimobile.facebookfeatureset.R.id.login_fbloginbutton);
 				
 				assertTrue (loginButton!=null);
 				
+				Session session = Session.getActiveSession();
+				assertTrue(session!=null);
+				
+				Log.e("KK","session found! isOpened?" + session.isOpened());
+				
+				activity.runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						loginButton.performClick();
+					}
+				});
+				
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				Log.e("KK","session found! isOpened?" + session.isOpened());
 				
 				Log.e("KK","runnable done");
 			}
