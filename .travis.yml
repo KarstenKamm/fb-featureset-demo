@@ -19,6 +19,6 @@ before_script:
 script: "./assets/run-build.sh"
 before_install:
 - openssl aes-256-cbc -K $encrypted_dd9727ebf51f_key -iv $encrypted_dd9727ebf51f_iv
-  -in secret.local.strings.xml.enc -out res\\values\\secret.local.strings.xml -d
+  -in secret.config.json.enc -out libs/facebook-android-sdk/facebook/tests/assets/config.json -d
 - openssl aes-256-cbc -K $encrypted_dd9727ebf51f_key -iv $encrypted_dd9727ebf51f_iv
-  -in secret.config.json.enc -out assets\\secret.config.json -d
+  -in secret.local.strings.xml.enc -out res\\values\\secret.local.strings.xml -d
