@@ -20,5 +20,3 @@ script: ./assets/run-build.sh
 before_install:
 - openssl aes-256-cbc -K $encrypted_5b16c02c3c02_key -iv $encrypted_5b16c02c3c02_iv
   -in secret.local.strings.xml.enc -out res/values/secret.local.strings.xml -d
-- openssl aes-256-cbc -K $encrypted_5b16c02c3c02_key -iv $encrypted_5b16c02c3c02_iv
-  -in secret.config.json.enc -out assets/secret.config.json -d
