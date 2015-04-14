@@ -32,7 +32,11 @@ public class FBLoginButtonTestCase extends
 	}
 
 
-	//launch activity; check existence and content of textview
+	//launch activity; 
+	//click login button
+	
+	boolean isSessionOpen;
+	
 	public void testBasicLoginFunctionality() {
 		Log.e("KK","FBLoginButtonTestCase starts..");
 		
@@ -60,7 +64,7 @@ public class FBLoginButtonTestCase extends
 				assertTrue(session!=null);
 				
 				Log.e("KK","session found! isOpened?" + session.isOpened());
-				
+				isSessionOpen = session.isOpened();
 				activity.runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
@@ -69,12 +73,13 @@ public class FBLoginButtonTestCase extends
 				});
 				
 				try {
-					Thread.sleep(500);
+					Thread.sleep(1500);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				Log.e("KK","session found! isOpened?" + session.isOpened());
+				assertEquals(isSessionOpen, session.isOpened());
 				
 				Log.e("KK","runnable done");
 			}
