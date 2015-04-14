@@ -88,7 +88,7 @@
     <delete file="libs/facebook-android-sdk/facebook/libs/android-support-v4.jar" />
     <copy file="libs/android-support-v4.jar" tofile="libs/facebook-android-sdk/facebook/libs/android-support-v4.jar" />
     
-    <copy file="assets/secret.config.json" tofile="libs/facebook-android-sdk/facebook/tests/assets/config.json" />
+    <!--copy file="assets/secret.config.json" tofile="libs/facebook-android-sdk/facebook/tests/assets/config.json" -->
     
 	<!--  check if copying was successful -->    
     <fail message="support lib is missing.">
