@@ -4,7 +4,7 @@
     tools:context="com.phimobile.facebookfeatureset.MainActivity" >
 
 	<item android:id="@+id/menu_loginbutton" android:title="loginbutton" android:icon="@drawable/ic_launcher"/>
-	<item android:id="@+id/menu_usersettingsfragment" android:title="usersettings fragment" android:icon="@drawable/com_facebook_button_like_icon"/>
+	<item android:id="@+id/menu_usersettingsfragment" android:title="usersettings fragment" />
 	
 	<item android:id="@+id/menu_share1" android:title="share 1" android:icon="@drawable/com_facebook_place_default_icon" />
 </menu>

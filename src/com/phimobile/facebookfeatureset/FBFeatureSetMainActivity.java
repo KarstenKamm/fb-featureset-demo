@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +20,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 import bolts.AppLinks;
 
@@ -278,22 +280,87 @@ public class FBFeatureSetMainActivity extends FragmentActivity {
 	}
 	
 	public void shareStoryWithShareDialog(String objectTitle) {
+        
+//		// Check for publish permissions    
+//        List<String> permissions = Session.getActiveSession().getPermissions();
+//        if (!isSubsetOf(PERMISSIONS, permissions)) {
+//            pendingPublishReauthorization = true;
+//            Session.NewPermissionsRequest newPermissionsRequest = new Session
+//                    .NewPermissionsRequest(this, PERMISSIONS);
+//            Session.getActiveSession().requestNewPublishPermissions(newPermissionsRequest);
+//            Log.e("KK","requesting publish permission");
+//            return;
+//        }
+//		
+//		OpenGraphObject victory = OpenGraphObject.Factory.createForPost("victory");
+//		victory.setTitle("Yay title!");
+//		victory.setDescription("Victory object description.");
+//		victory.setType("victory");
+//		victory.setUrl("http://dist.phimobile.com/opengraphexample.html");
+//		
+//		OpenGraphAction action = GraphObject.Factory.create(OpenGraphAction.class);
+//		action.setProperty("title", "Title required");
+//		action.setProperty("description", "description in action");
+//		action.setProperty("victory", victory);
+//		action.setData(victory);
+//		action.setType("celebrate");
+//		
+//		
+//
+//		
+//		//TODO KK 1 test if can present
+//		FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(this, action, "victory")
+//		        .build();
+//		
+//		uiHelper.trackPendingDialogCall(shareDialog.present());
+	
+		
+		//
+//		Bundle params = new Bundle();
+//		params.putString("fb:app_id", "1557232214540052");
+//		params.putString("og:type", "video.other");
+//		params.putString("og:url", "https://www.youtube.com/watch?v=uMuacYr1lIs");
+//		params.putString("og:title", "Sample Video");
+//		params.putString("og:image", "https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png");
+//		params.putString("video:actor:id", "0");
+//		/* make the API call */
+//		new Request(
+//		    Session.getActiveSession(),
+//		    "/me/objects/video.other",
+//		    params,
+//		    HttpMethod.POST,
+//		    new Request.Callback() {
+//		        public void onCompleted(Response response) {
+//		            /* handle the result */
+//		        	Log.e("KK","result: "+response.toString());
+//		        }
+//		    }
+//		).executeAsync();
 		
 		
-		OpenGraphAction action = GraphObject.Factory.create(OpenGraphAction.class);
-		action.setProperty("object", "https://example.com/book/Snow-Crash.html");
-		action.setType("fbfeaturesettester:find");
-		//TODO KK 1 test if can present
-		FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(this, action, "object")
-		        .build();
-		uiHelper.trackPendingDialogCall(shareDialog.present());
+		Bundle params = new Bundle();
+		
+		params.putString("victory", "http://dist.phimobile.com/opengraphexample.html");
+		params.putString("title", objectTitle);
+//		params.putString("type", "victory");
+		params.putString("image","https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png");
+		params.putString("description", "description");
+	
+		Request request = new Request(
+		    Session.getActiveSession(),
+		    "me/games.celebrate",
+		    params,
+		    HttpMethod.POST
+		);
+		AsyncTask task = new StoryTask().execute(request); 
+//		 handle the response
 	}
 	
 	public void shareWithFeedDialog(String url) {
 	    Bundle params = new Bundle();
 	    params.putString("name", "Facebook SDK Tester: Feed Dialog");
 	    params.putString("caption", "link text goes here..");
-	    params.putString("description", "the feed dialog text content an image are customizable!");
+	    params.putString("description", "the feed dialog text content and image are customizable!");
 	    params.putString("link", "http://de.wikipedia.org");
 //	    params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
 
@@ -408,5 +475,17 @@ public class FBFeatureSetMainActivity extends FragmentActivity {
 	        }
 	    }
 	    return true;
+	}
+	
+	private class StoryTask extends AsyncTask<Request, Void, Void> {
+
+		@Override
+		protected Void doInBackground(Request... params) {
+			Log.e("KK","doing");
+			Response r = params[0].executeAndWait();
+			Log.e("KK","done: " +r.toString());
+			return null;
+		}
+		
 	}
 }
